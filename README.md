@@ -1,5 +1,7 @@
 # README
 
+This is a boilerplate rails application that has a simple posts table. I then use Vue and a Vuex store (using the complete Vuex modules pattern) to then render some data from the rails json api into a Vue component. Requires some additional detail to flesh out the axios api so it is reusable and elegant. Right now I put this together to get some help on a bug I experienced with a Vuex `this.$store` undefined error that was doing my head in :sad:
+
 ## System dependencies  
 
 **ruby 2.6.3**  

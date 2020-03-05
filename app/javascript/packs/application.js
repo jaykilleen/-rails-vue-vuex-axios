@@ -15,3 +15,25 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import TurbolinksAdapter from 'vue-turbolinks'
+import Vue from 'vue/dist/vue.esm'
+import App from './App.vue'
+import store from './store'
+
+Vue.use(TurbolinksAdapter)
+
+document.addEventListener('turbolinks:load', () => {
+  new Vue({
+    el: '#app',
+    data: () => {
+      return {
+        message: "Can you say hello?"
+      }
+    },
+    store,
+    render: h => h(App)
+  })
+})

@@ -1,15 +1,22 @@
 <template>
   <div id="app">
     <p>{{ message }}</p>
+    <Post />
   </div>
 </template>
 
 <script>
+import Post from './components/Post'
+
 export default {
-  data: function () {
+  components: { Post },
+  data() {
     return {
-      message: "Hello Vue!"
+      message: "Hello from App Component!"
     }
+  },
+  created () {
+    console.log(this.$store)
   }
 }
 </script>

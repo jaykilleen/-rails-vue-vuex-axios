@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ActiveRecord::Base.connection.execute("DELETE FROM posts")
+
+puts 'Seeding Posts'
+posts = Post.create([{ title: 'A Post', description: 'Today A Post' }, { title: "B Post", description: 'Tomorrow B Post' }])
+puts "There are #{Post.count} records in the posts table."
+
+puts "Databases #{Rails.env} tables are now successfully seeded!"
